@@ -10,7 +10,7 @@ def missing_alphabets(s):
     for letter in s:
         letters[letter] += 1
     greatest = max(letters.values())
-    
+    print(letters)
     
     alphabet = list('abcdefghijklmnopqrstuvwxyz')
     for letter in alphabet:
@@ -18,10 +18,10 @@ def missing_alphabets(s):
             letters[letter] = greatest
         else:
             letters[letter] = greatest - letters[letter]
-    
+    print(letters)
     
     missing = "".join(sorted(letter * count for letter, count in letters.items() if letters[letter] > 0))
-    return missing
+    print(missing)
 
 
 missing_alphabets('abcdefghijklmnopqrstuvwxyy')
